@@ -23,16 +23,12 @@ public:
     	        rev=(rev*10)+r;
     	        num/=10;
     	    }
-    	    if(a[i]==rev)
+    	    if(a[i]!=rev)
     	    {
-    	        cnt++;
+    	       return 0;
     	    }
     	}
-    	if(cnt==n)
-        {
-            return 1;
-        }
-        else return 0;
+    	return 1;
     }
     
 };
