@@ -1,7 +1,7 @@
 //{ Driver Code Starts
-#include <bits/stdc++.h>
-
+#include<bits/stdc++.h>
 using namespace std;
+
 
 // } Driver Code Ends
 //User function template for C++
@@ -18,18 +18,23 @@ public:
 	}
 };
 
+
 //{ Driver Code Starts.
 
-int main() {
+int main(){
     int t;
-    cin >> t;
-    while (t--) {
+    scanf("%d ",&t);
+    while(t--){
+        
         int n;
-        cin >> n;
-        Solution ob;
-        auto ans = ob.seriesSum(n);
-        cout << ans << "\n";
+        scanf("%d",&n);
+        
+        Solution obj;
+        long long res = obj.seriesSum(n);
+        
+        cout<<res<<endl;
+        
     }
-    return 0;
 }
+
 // } Driver Code Ends
