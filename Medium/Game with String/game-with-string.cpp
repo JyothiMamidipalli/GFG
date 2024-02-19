@@ -11,28 +11,32 @@ class Solution{
 public:
     int minValue(string s, int k){
         // code here
-        unordered_map<char,int> mp;
-        int n = s.size();
-        for(int i = 0;i<n;i++){
+        map<char,int>mp;
+        for(int i=0;i<s.length();i++)
+        {
             mp[s[i]]++;
         }
-        priority_queue<int> pq;
-        for(it:mp){
-            pq.push(it.second);
+        vector<int>jyo;
+        int sum=0;
+        for(auto it:mp)
+        {
+            jyo.push_back(it.second);
         }
-        while(k--){
-            int temp = pq.top();
-            pq.pop();
-            temp--;
-            pq.push(temp);
+        while(k!=0)
+        {
+            sort(jyo.begin(),jyo.end());
+            int a = jyo.back();
+            jyo.pop_back();
+            jyo.push_back(a-1);
+            k--;
         }
-        int ans = 0;
-        while(!pq.empty()){
-            int temp = pq.top();
-            pq.pop();
-            ans+=temp*temp;
+        for(int i=0;i<jyo.size();i++)
+        {
+            sum+=jyo[i]*jyo[i];
+            
         }
-        return ans;
+        return sum;
+        
     }
 };
 
