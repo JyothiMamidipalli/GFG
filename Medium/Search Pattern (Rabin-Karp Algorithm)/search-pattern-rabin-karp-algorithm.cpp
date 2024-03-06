@@ -11,17 +11,17 @@ class Solution
         {
             //code here.
             int m=pattern.size();
-            vector<int>ans;
+            vector<int>jyo;
             for(int i=0;i<=text.size()-m;i++)
             {
                 string str=text.substr(i,m);
                 if(str==pattern)
                 {
-                    ans.push_back(i+1);
+                    jyo.push_back(i+1);
                 }
             }
             
-            return ans;
+            return jyo;
         }
      
 };
