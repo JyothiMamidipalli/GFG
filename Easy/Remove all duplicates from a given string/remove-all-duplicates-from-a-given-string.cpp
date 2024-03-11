@@ -10,18 +10,22 @@ class Solution{
 public:
 	string removeDuplicates(string str) {
 	    // code here
-	     string s="";
-        unordered_map<char,int>jyo;
-        for(int i=0;i<str.size();i++){
-            jyo[str[i]]++;
-            if(jyo[str[i]]>1){
-                
-            }
-            else{
-                s+=str[i];
-            }
-        }
-        return s;
+	    string s;
+	    map<char,int>jyo;
+	    for(auto it:str)
+	    {
+	        jyo[it]++;
+	    }
+	    for(auto it:str)
+	    {
+	        if(jyo[it]!=0)
+	        {
+	            s+=it;
+	            jyo[it]=0;
+	        }
+	    }
+	    return s;
+	    
 	}
 };
 
